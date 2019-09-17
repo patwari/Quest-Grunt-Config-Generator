@@ -1,5 +1,5 @@
 {
-    "abc": [
+    "files": [
         {
             "dest": "<%= assetsDir %>manifest/list_base_<%= dtRes %>_en.json",
             "src": [

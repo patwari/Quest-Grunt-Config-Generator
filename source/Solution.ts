@@ -1,6 +1,6 @@
 /**
- * This class contains our solution.
- * Call startPicking() from console to change the positions.
+ * This class is the brain of our project.
+ * Here we generate the File Index and List Manifest objects.
  */
 
 namespace monoloco.core {
@@ -28,7 +28,9 @@ namespace monoloco.core {
             // to generate list Manifest
         }
 
-
+        /**
+         * Parse user selected languages and make the LANG array ready for use.
+         */
         private getUserLang(): void {
             Constants.LANG = [];
             let langString: string = this.langField.value;
@@ -60,7 +62,9 @@ namespace monoloco.core {
                 Constants.RESOLUTIONS.push("<%= ldRes %>");
             }
         }
-
+        /**
+         * Parse user selected file types and make FILE_TYPE_SUFFiX array ready for use
+         */
         private getUserFileTypes(): void {
             Constants.FILE_TYPE_SUFFIX = [];
             let type_json: HTMLInputElement = <HTMLInputElement>document.getElementById("type_json");
@@ -74,13 +78,16 @@ namespace monoloco.core {
                 Constants.FILE_TYPE_SUFFIX.push("**/*.png");
             }
             if (type_jpg.checked) {
-                Constants.FILE_TYPE_SUFFIX.push("**/*.png");
+                Constants.FILE_TYPE_SUFFIX.push("**/*.jpg");
             }
             if (type_atlas.checked) {
                 Constants.FILE_TYPE_SUFFIX.push("**/*.atlas");
             }
         }
 
+        /**
+         * Parse user selected File types.
+         */
         private getUserLoadTypes(): void {
             Constants.LOAD_TYPE_ARRAY = [];
             let load_base: HTMLInputElement = <HTMLInputElement>document.getElementById("load_base");
@@ -101,11 +108,17 @@ namespace monoloco.core {
             }
         }
 
-        private clearOutput(): void {
+        /**
+         * clear the output div
+         */
+        public clearOutput(): void {
             outputDiv.innerHTML = "";
         }
 
-        private generateFileIndexConfig(): void {
+        /**
+         * This function generates the File Index objects. 
+         */
+        public generateFileIndexConfig(): void {
             let htmlText: string = "";
 
             if (!Constants.LANG.length) {
@@ -115,18 +128,24 @@ namespace monoloco.core {
             Constants.LANG.forEach((lang: string, langIndex: number) => {
                 Constants.RESOLUTIONS.forEach((res: string, resIndex: number) => {
                     Constants.LOAD_TYPE_ARRAY.forEach((loadType: LOADTYPE) => {
-                        // htmlText += "{<br>";
                         htmlText += this.addLoadingType(lang, res, loadType);
-                        // htmlText += "<hr />";
                     });
                 });
-                htmlText = htmlText.replace(/<hr \/>$/, "");
-                htmlText += '<hr class="bigHR">';
             });
 
+            // remove the last comma "," (if any)
+            htmlText = htmlText.replace(/,<br>$/, "<br>");
+            htmlText = '"files": [' + htmlText + ']';
             outputDiv.innerHTML = htmlText;
         }
 
+        /**
+         * Generates individual objects string for provided configurations
+         * @param lang Language
+         * @param res Resolution
+         * @param loadType 
+         * @returns {string} the final object string 
+         */
         private addLoadingType(lang: string, res: string, loadType: LOADTYPE): string {
             let tempText: string = "";
             let finalString: string = "";
@@ -136,41 +155,41 @@ namespace monoloco.core {
                 case LOADTYPE.list_base:
                     finalString += 'list_base_' + res + '_' + lang + '.json",<br>';
                     finalString += '"src": [<br>';
-                    tempText = "images/common/preload/other/";
+                    tempText = Constants.PATH_PREFIX + "common/preload/other/";
                     finalString += this.addSuffix(tempText);
-                    tempText = "images/common/preload/lang/" + lang + "/";
+                    tempText = Constants.PATH_PREFIX + "common/preload/lang/" + lang + "/";
                     finalString += this.addSuffix(tempText);
-                    tempText = "images/" + res + "/preload/other/";
+                    tempText = Constants.PATH_PREFIX + res + "/preload/other/";
                     finalString += this.addSuffix(tempText);
-                    tempText = "images/" + res + "/preload/lang/" + lang + "/";
+                    tempText = Constants.PATH_PREFIX + res + "/preload/lang/" + lang + "/";
                     finalString += this.addSuffix(tempText, true);
                     break;
                 case LOADTYPE.list_base_postload:
                     finalString += 'list_base_postload' + res + '_' + lang + '.json",<br>';
                     finalString += '"src": [<br>';
-                    tempText = "images/common/postload/baseGame/other/";
+                    tempText = Constants.PATH_PREFIX + "common/postload/baseGame/other/";
                     finalString += this.addSuffix(tempText);
-                    tempText = "images/common/postload/baseGame/lang/" + lang + "/";
+                    tempText = Constants.PATH_PREFIX + "common/postload/baseGame/lang/" + lang + "/";
                     finalString += this.addSuffix(tempText);
-                    tempText = "images/" + res + "/postload/baseGame/other/";
+                    tempText = Constants.PATH_PREFIX + res + "/postload/baseGame/other/";
                     finalString += this.addSuffix(tempText);
-                    tempText = "images/" + res + "/postload/baseGame/lang/" + lang + "/";
+                    tempText = Constants.PATH_PREFIX + res + "/postload/baseGame/lang/" + lang + "/";
                     finalString += this.addSuffix(tempText, true);
                     break;
                 case LOADTYPE.list_free:
                     finalString += 'list_free' + res + '_' + lang + '.json",<br>';
                     finalString += '"src": [<br>';
-                    tempText = "images/" + res + "/postload/freegame/other/";
+                    tempText = Constants.PATH_PREFIX + res + "/postload/freegame/other/";
                     finalString += this.addSuffix(tempText);
-                    tempText = "images/" + res + "/postload/freegame/lang/" + lang + "/";
+                    tempText = Constants.PATH_PREFIX + res + "/postload/freegame/lang/" + lang + "/";
                     finalString += this.addSuffix(tempText, true);
                     break;
                 case LOADTYPE.list_info:
                     finalString += 'list_info' + res + '_' + lang + '.json",<br>';
                     finalString += '"src": [<br>';
-                    tempText = "images/" + res + "/postload/paytable/other/";
+                    tempText = Constants.PATH_PREFIX + res + "/postload/paytable/other/";
                     finalString += this.addSuffix(tempText);
-                    tempText = "images/" + res + "/postload/paytable/lang/" + lang + "/";
+                    tempText = Constants.PATH_PREFIX + res + "/postload/paytable/lang/" + lang + "/";
                     finalString += this.addSuffix(tempText, true);
                     break;
                 default:
