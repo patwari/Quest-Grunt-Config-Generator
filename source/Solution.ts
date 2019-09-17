@@ -117,6 +117,7 @@ namespace monoloco.core {
          */
         public clearOutput(): void {
             outputDiv.innerHTML = "";
+            (helpFile) && helpFile.undoHelp();
         }
 
         /**

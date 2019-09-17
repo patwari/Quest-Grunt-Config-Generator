@@ -6,5 +6,6 @@
  */
 namespace monoloco.core {
     export let outputDiv: HTMLElement = document.getElementById("outputDiv") as HTMLElement;
+    export let helpFile: HelpFile = new HelpFile();
     export let solution: Solution = new Solution();
 }
