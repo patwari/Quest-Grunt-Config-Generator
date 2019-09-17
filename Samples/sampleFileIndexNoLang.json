@@ -13,7 +13,7 @@
             "cwd": "<%= assetsDir %>"
         },
         {
-            "dest": "<%= assetsDir %>manifest/list_base_postload<%= dtRes %>_undefined.json",
+            "dest": "<%= assetsDir %>manifest/list_base_postload_<%= dtRes %>_undefined.json",
             "src": [
                 "images/common/postload/baseGame/**/*.json",
                 "images/common/postload/baseGame/**/*.png",
@@ -25,7 +25,7 @@
             "cwd": "<%= assetsDir %>"
         },
         {
-            "dest": "<%= assetsDir %>manifest/list_free<%= dtRes %>_undefined.json",
+            "dest": "<%= assetsDir %>manifest/list_free_<%= dtRes %>_undefined.json",
             "src": [
                 "images/<%= dtRes %>/postload/freegame/**/*.json",
                 "images/<%= dtRes %>/postload/freegame/**/*.png",
@@ -34,7 +34,7 @@
             "cwd": "<%= assetsDir %>"
         },
         {
-            "dest": "<%= assetsDir %>manifest/list_info<%= dtRes %>_undefined.json",
+            "dest": "<%= assetsDir %>manifest/list_info_<%= dtRes %>_undefined.json",
             "src": [
                 "images/<%= dtRes %>/postload/paytable/**/*.json",
                 "images/<%= dtRes %>/postload/paytable/**/*.png",
@@ -55,7 +55,7 @@
             "cwd": "<%= assetsDir %>"
         },
         {
-            "dest": "<%= assetsDir %>manifest/list_base_postload<%= hdRes %>_undefined.json",
+            "dest": "<%= assetsDir %>manifest/list_base_postload_<%= hdRes %>_undefined.json",
             "src": [
                 "images/common/postload/baseGame/**/*.json",
                 "images/common/postload/baseGame/**/*.png",
@@ -67,7 +67,7 @@
             "cwd": "<%= assetsDir %>"
         },
         {
-            "dest": "<%= assetsDir %>manifest/list_free<%= hdRes %>_undefined.json",
+            "dest": "<%= assetsDir %>manifest/list_free_<%= hdRes %>_undefined.json",
             "src": [
                 "images/<%= hdRes %>/postload/freegame/**/*.json",
                 "images/<%= hdRes %>/postload/freegame/**/*.png",
@@ -76,7 +76,7 @@
             "cwd": "<%= assetsDir %>"
         },
         {
-            "dest": "<%= assetsDir %>manifest/list_info<%= hdRes %>_undefined.json",
+            "dest": "<%= assetsDir %>manifest/list_info_<%= hdRes %>_undefined.json",
             "src": [
                 "images/<%= hdRes %>/postload/paytable/**/*.json",
                 "images/<%= hdRes %>/postload/paytable/**/*.png",

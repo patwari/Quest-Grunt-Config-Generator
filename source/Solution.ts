@@ -165,7 +165,7 @@ namespace monoloco.core {
             if (lang === undefined || lang === null) {
                 switch (loadType) {
                     case LOADTYPE.list_base:
-                        finalString += 'list_base_' + res + '.json",<br>';
+                        finalString += 'list_base' + '_' + res + '.json",<br>';
                         finalString += '"src": [<br>';
                         tempText = Constants.PATH_PREFIX + "common/preload/";
                         finalString += this.addSuffix(tempText);
@@ -173,7 +173,7 @@ namespace monoloco.core {
                         finalString += this.addSuffix(tempText, true);
                         break;
                     case LOADTYPE.list_base_postload:
-                        finalString += 'list_base_postload' + res + '_' + lang + '.json",<br>';
+                        finalString += 'list_base_postload' + '_' + res + '_' + lang + '.json",<br>';
                         finalString += '"src": [<br>';
                         tempText = Constants.PATH_PREFIX + "common/postload/baseGame/";
                         finalString += this.addSuffix(tempText);
@@ -181,13 +181,13 @@ namespace monoloco.core {
                         finalString += this.addSuffix(tempText, true);
                         break;
                     case LOADTYPE.list_free:
-                        finalString += 'list_free' + res + '_' + lang + '.json",<br>';
+                        finalString += 'list_free' + '_' + res + '_' + lang + '.json",<br>';
                         finalString += '"src": [<br>';
                         tempText = Constants.PATH_PREFIX + res + "/postload/freegame/";
                         finalString += this.addSuffix(tempText, true);
                         break;
                     case LOADTYPE.list_info:
-                        finalString += 'list_info' + res + '_' + lang + '.json",<br>';
+                        finalString += 'list_info' + '_' + res + '_' + lang + '.json",<br>';
                         finalString += '"src": [<br>';
                         tempText = Constants.PATH_PREFIX + res + "/postload/paytable/";
                         finalString += this.addSuffix(tempText, true);
@@ -199,7 +199,7 @@ namespace monoloco.core {
             else {
                 switch (loadType) {
                     case LOADTYPE.list_base:
-                        finalString += 'list_base_' + res + '_' + lang + '.json",<br>';
+                        finalString += 'list_base' + '_' + res + '_' + lang + '.json",<br>';
                         finalString += '"src": [<br>';
                         tempText = Constants.PATH_PREFIX + "common/preload/other/";
                         finalString += this.addSuffix(tempText);
@@ -211,7 +211,7 @@ namespace monoloco.core {
                         finalString += this.addSuffix(tempText, true);
                         break;
                     case LOADTYPE.list_base_postload:
-                        finalString += 'list_base_postload' + res + '_' + lang + '.json",<br>';
+                        finalString += 'list_base_postload' + '_' + res + '_' + lang + '.json",<br>';
                         finalString += '"src": [<br>';
                         tempText = Constants.PATH_PREFIX + "common/postload/baseGame/other/";
                         finalString += this.addSuffix(tempText);
@@ -223,7 +223,7 @@ namespace monoloco.core {
                         finalString += this.addSuffix(tempText, true);
                         break;
                     case LOADTYPE.list_free:
-                        finalString += 'list_free' + res + '_' + lang + '.json",<br>';
+                        finalString += 'list_free' + '_' + res + '_' + lang + '.json",<br>';
                         finalString += '"src": [<br>';
                         tempText = Constants.PATH_PREFIX + res + "/postload/freegame/other/";
                         finalString += this.addSuffix(tempText);
@@ -231,7 +231,7 @@ namespace monoloco.core {
                         finalString += this.addSuffix(tempText, true);
                         break;
                     case LOADTYPE.list_info:
-                        finalString += 'list_info' + res + '_' + lang + '.json",<br>';
+                        finalString += 'list_info' + '_' + res + '_' + lang + '.json",<br>';
                         finalString += '"src": [<br>';
                         tempText = Constants.PATH_PREFIX + res + "/postload/paytable/other/";
                         finalString += this.addSuffix(tempText);
