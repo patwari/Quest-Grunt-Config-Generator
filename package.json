@@ -1,6 +1,6 @@
 {
   "name": "gruntconfiggenerator",
-  "version": "0.1.0-rc",
+  "version": "0.1.0",
   "description": "This is a grunt config generator for Quest.\r ## Project Setup\r 1. Clone repository at local directory. Go to the root directory\r 2. Open cmd and run ```http-server```.\r 3. Open the provided local server link in browser.",
   "main": "main.js",
   "scripts": {
