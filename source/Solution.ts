@@ -123,6 +123,12 @@ namespace monoloco.core {
 
             if (!Constants.LANG.length) {
                 // TODO:  handle later when no language given
+                Constants.RESOLUTIONS.forEach((res: string, resIndex: number) => {
+                    Constants.LOAD_TYPE_ARRAY.forEach((loadType: LOADTYPE) => {
+                        htmlText += this.addLoadingType(undefined, res, loadType);
+                    });
+                });
+
             }
 
             Constants.LANG.forEach((lang: string, langIndex: number) => {
@@ -146,55 +152,93 @@ namespace monoloco.core {
          * @param loadType 
          * @returns {string} the final object string 
          */
-        private addLoadingType(lang: string, res: string, loadType: LOADTYPE): string {
+        private addLoadingType(lang: string | undefined, res: string, loadType: LOADTYPE): string {
             let tempText: string = "";
             let finalString: string = "";
             finalString += "{<br>";
             finalString += '"dest": ' + '"<%= assetsDir %>manifest/';
-            switch (loadType) {
-                case LOADTYPE.list_base:
-                    finalString += 'list_base_' + res + '_' + lang + '.json",<br>';
-                    finalString += '"src": [<br>';
-                    tempText = Constants.PATH_PREFIX + "common/preload/other/";
-                    finalString += this.addSuffix(tempText);
-                    tempText = Constants.PATH_PREFIX + "common/preload/lang/" + lang + "/";
-                    finalString += this.addSuffix(tempText);
-                    tempText = Constants.PATH_PREFIX + res + "/preload/other/";
-                    finalString += this.addSuffix(tempText);
-                    tempText = Constants.PATH_PREFIX + res + "/preload/lang/" + lang + "/";
-                    finalString += this.addSuffix(tempText, true);
-                    break;
-                case LOADTYPE.list_base_postload:
-                    finalString += 'list_base_postload' + res + '_' + lang + '.json",<br>';
-                    finalString += '"src": [<br>';
-                    tempText = Constants.PATH_PREFIX + "common/postload/baseGame/other/";
-                    finalString += this.addSuffix(tempText);
-                    tempText = Constants.PATH_PREFIX + "common/postload/baseGame/lang/" + lang + "/";
-                    finalString += this.addSuffix(tempText);
-                    tempText = Constants.PATH_PREFIX + res + "/postload/baseGame/other/";
-                    finalString += this.addSuffix(tempText);
-                    tempText = Constants.PATH_PREFIX + res + "/postload/baseGame/lang/" + lang + "/";
-                    finalString += this.addSuffix(tempText, true);
-                    break;
-                case LOADTYPE.list_free:
-                    finalString += 'list_free' + res + '_' + lang + '.json",<br>';
-                    finalString += '"src": [<br>';
-                    tempText = Constants.PATH_PREFIX + res + "/postload/freegame/other/";
-                    finalString += this.addSuffix(tempText);
-                    tempText = Constants.PATH_PREFIX + res + "/postload/freegame/lang/" + lang + "/";
-                    finalString += this.addSuffix(tempText, true);
-                    break;
-                case LOADTYPE.list_info:
-                    finalString += 'list_info' + res + '_' + lang + '.json",<br>';
-                    finalString += '"src": [<br>';
-                    tempText = Constants.PATH_PREFIX + res + "/postload/paytable/other/";
-                    finalString += this.addSuffix(tempText);
-                    tempText = Constants.PATH_PREFIX + res + "/postload/paytable/lang/" + lang + "/";
-                    finalString += this.addSuffix(tempText, true);
-                    break;
-                default:
-                    break;
+
+            if (lang === undefined || lang === null) {
+                switch (loadType) {
+                    case LOADTYPE.list_base:
+                        finalString += 'list_base_' + res + '.json",<br>';
+                        finalString += '"src": [<br>';
+                        tempText = Constants.PATH_PREFIX + "common/preload/";
+                        finalString += this.addSuffix(tempText);
+                        tempText = Constants.PATH_PREFIX + res + "/preload/";
+                        finalString += this.addSuffix(tempText, true);
+                        break;
+                    case LOADTYPE.list_base_postload:
+                        finalString += 'list_base_postload' + res + '_' + lang + '.json",<br>';
+                        finalString += '"src": [<br>';
+                        tempText = Constants.PATH_PREFIX + "common/postload/baseGame/";
+                        finalString += this.addSuffix(tempText);
+                        tempText = Constants.PATH_PREFIX + res + "/postload/baseGame/";
+                        finalString += this.addSuffix(tempText, true);
+                        break;
+                    case LOADTYPE.list_free:
+                        finalString += 'list_free' + res + '_' + lang + '.json",<br>';
+                        finalString += '"src": [<br>';
+                        tempText = Constants.PATH_PREFIX + res + "/postload/freegame/";
+                        finalString += this.addSuffix(tempText, true);
+                        break;
+                    case LOADTYPE.list_info:
+                        finalString += 'list_info' + res + '_' + lang + '.json",<br>';
+                        finalString += '"src": [<br>';
+                        tempText = Constants.PATH_PREFIX + res + "/postload/paytable/";
+                        finalString += this.addSuffix(tempText, true);
+                        break;
+                    default:
+                        break;
+                }
             }
+            else {
+                switch (loadType) {
+                    case LOADTYPE.list_base:
+                        finalString += 'list_base_' + res + '_' + lang + '.json",<br>';
+                        finalString += '"src": [<br>';
+                        tempText = Constants.PATH_PREFIX + "common/preload/other/";
+                        finalString += this.addSuffix(tempText);
+                        tempText = Constants.PATH_PREFIX + "common/preload/lang/" + lang + "/";
+                        finalString += this.addSuffix(tempText);
+                        tempText = Constants.PATH_PREFIX + res + "/preload/other/";
+                        finalString += this.addSuffix(tempText);
+                        tempText = Constants.PATH_PREFIX + res + "/preload/lang/" + lang + "/";
+                        finalString += this.addSuffix(tempText, true);
+                        break;
+                    case LOADTYPE.list_base_postload:
+                        finalString += 'list_base_postload' + res + '_' + lang + '.json",<br>';
+                        finalString += '"src": [<br>';
+                        tempText = Constants.PATH_PREFIX + "common/postload/baseGame/other/";
+                        finalString += this.addSuffix(tempText);
+                        tempText = Constants.PATH_PREFIX + "common/postload/baseGame/lang/" + lang + "/";
+                        finalString += this.addSuffix(tempText);
+                        tempText = Constants.PATH_PREFIX + res + "/postload/baseGame/other/";
+                        finalString += this.addSuffix(tempText);
+                        tempText = Constants.PATH_PREFIX + res + "/postload/baseGame/lang/" + lang + "/";
+                        finalString += this.addSuffix(tempText, true);
+                        break;
+                    case LOADTYPE.list_free:
+                        finalString += 'list_free' + res + '_' + lang + '.json",<br>';
+                        finalString += '"src": [<br>';
+                        tempText = Constants.PATH_PREFIX + res + "/postload/freegame/other/";
+                        finalString += this.addSuffix(tempText);
+                        tempText = Constants.PATH_PREFIX + res + "/postload/freegame/lang/" + lang + "/";
+                        finalString += this.addSuffix(tempText, true);
+                        break;
+                    case LOADTYPE.list_info:
+                        finalString += 'list_info' + res + '_' + lang + '.json",<br>';
+                        finalString += '"src": [<br>';
+                        tempText = Constants.PATH_PREFIX + res + "/postload/paytable/other/";
+                        finalString += this.addSuffix(tempText);
+                        tempText = Constants.PATH_PREFIX + res + "/postload/paytable/lang/" + lang + "/";
+                        finalString += this.addSuffix(tempText, true);
+                        break;
+                    default:
+                        break;
+                }
+            }
+
             finalString += "],<br>";
             finalString += '"cwd": "<%= assetsDir %>"<br>},<br>';
             return finalString;
