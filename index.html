@@ -9,7 +9,37 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
 </head>
 
-<body onload=>
+<body>
+    <div id="settings">
+        Languages: <input type="text" id="langField" name="langField"> <br>
+        <fieldset>
+            <legend>Resolutions</legend>
+            <input type="checkbox" id="res_desktop" checked>Desktop <br>
+            <input type="checkbox" id="res_hd" checked>HD <br>
+            <input type="checkbox" id="res_sd">SD<br>
+            <input type="checkbox" id="res_ld">LD<br>
+        </fieldset>
+        <fieldset>
+            <legend>File Types</legend>
+            <input type="checkbox" id="type_json" checked>.json<br>
+            <input type="checkbox" id="type_png" checked>.png <br>
+            <input type="checkbox" id="type_jpg" checked>.jpg<br>
+            <input type="checkbox" id="type_atlas">.atlas<br>
+        </fieldset>
+        <fieldset>
+            <legend>Load Types</legend>
+            <input type="checkbox" id="load_base" checked>list_base<br>
+            <input type="checkbox" id="type_base_postload" checked>list_base_postload<br>
+            <input type="checkbox" id="type_free" checked>list_free<br>
+            <input type="checkbox" id="type_info" checked>list_info<br>
+        </fieldset>
+    </div>
+    <br>
+    <div id="buttonsContainer">
+        <button id="fileindexButton">Generate File Index</button>
+        <button id="listManifestButton">Generate List Manifest</button>
+    </div>
+    <br>
     <div id="outputDiv"></div>
     <script src="main.js"></script>
 </body>

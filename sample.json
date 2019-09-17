@@ -1,0 +1,124 @@
+{
+    "abc": [
+        {
+            "dest": "<%= assetsDir %>manifest/list_base_<%= dtRes %>_en.json",
+            "src": [
+                "images/common/preload/other/**/*.json",
+                "images/common/preload/other/**/*.png",
+                "images/common/preload/other/**/*.png",
+                "images/common/preload/lang/en/**/*.json",
+                "images/common/preload/lang/en/**/*.png",
+                "images/common/preload/lang/en/**/*.png",
+                "images/<%= dtRes %>/preload/other/**/*.json",
+                "images/<%= dtRes %>/preload/other/**/*.png",
+                "images/<%= dtRes %>/preload/other/**/*.png",
+                "images/<%= dtRes %>/preload/lang/en/**/*.json",
+                "images/<%= dtRes %>/preload/lang/en/**/*.png",
+                "images/<%= dtRes %>/preload/lang/en/**/*.png"
+            ],
+            "cwd": "<%= assetsDir %>"
+        },
+        {
+            "dest": "<%= assetsDir %>manifest/list_base_postload<%= dtRes %>_en.json",
+            "src": [
+                "images/common/postload/baseGame/other/**/*.json",
+                "images/common/postload/baseGame/other/**/*.png",
+                "images/common/postload/baseGame/other/**/*.png",
+                "images/common/postload/baseGame/lang/en/**/*.json",
+                "images/common/postload/baseGame/lang/en/**/*.png",
+                "images/common/postload/baseGame/lang/en/**/*.png",
+                "images/<%= dtRes %>/postload/baseGame/other/**/*.json",
+                "images/<%= dtRes %>/postload/baseGame/other/**/*.png",
+                "images/<%= dtRes %>/postload/baseGame/other/**/*.png",
+                "images/<%= dtRes %>/postload/baseGame/lang/en/**/*.json",
+                "images/<%= dtRes %>/postload/baseGame/lang/en/**/*.png",
+                "images/<%= dtRes %>/postload/baseGame/lang/en/**/*.png"
+            ],
+            "cwd": "<%= assetsDir %>"
+        },
+        {
+            "dest": "<%= assetsDir %>manifest/list_free<%= dtRes %>_en.json",
+            "src": [
+                "images/<%= dtRes %>/postload/freegame/other/**/*.json",
+                "images/<%= dtRes %>/postload/freegame/other/**/*.png",
+                "images/<%= dtRes %>/postload/freegame/other/**/*.png",
+                "images/<%= dtRes %>/postload/freegame/lang/en/**/*.json",
+                "images/<%= dtRes %>/postload/freegame/lang/en/**/*.png",
+                "images/<%= dtRes %>/postload/freegame/lang/en/**/*.png"
+            ],
+            "cwd": "<%= assetsDir %>"
+        },
+        {
+            "dest": "<%= assetsDir %>manifest/list_info<%= dtRes %>_en.json",
+            "src": [
+                "images/<%= dtRes %>/postload/paytable/other/**/*.json",
+                "images/<%= dtRes %>/postload/paytable/other/**/*.png",
+                "images/<%= dtRes %>/postload/paytable/other/**/*.png",
+                "images/<%= dtRes %>/postload/paytable/lang/en/**/*.json",
+                "images/<%= dtRes %>/postload/paytable/lang/en/**/*.png",
+                "images/<%= dtRes %>/postload/paytable/lang/en/**/*.png"
+            ],
+            "cwd": "<%= assetsDir %>"
+        },
+        {
+            "dest": "<%= assetsDir %>manifest/list_base_<%= hdRes %>_en.json",
+            "src": [
+                "images/common/preload/other/**/*.json",
+                "images/common/preload/other/**/*.png",
+                "images/common/preload/other/**/*.png",
+                "images/common/preload/lang/en/**/*.json",
+                "images/common/preload/lang/en/**/*.png",
+                "images/common/preload/lang/en/**/*.png",
+                "images/<%= hdRes %>/preload/other/**/*.json",
+                "images/<%= hdRes %>/preload/other/**/*.png",
+                "images/<%= hdRes %>/preload/other/**/*.png",
+                "images/<%= hdRes %>/preload/lang/en/**/*.json",
+                "images/<%= hdRes %>/preload/lang/en/**/*.png",
+                "images/<%= hdRes %>/preload/lang/en/**/*.png"
+            ],
+            "cwd": "<%= assetsDir %>"
+        },
+        {
+            "dest": "<%= assetsDir %>manifest/list_base_postload<%= hdRes %>_en.json",
+            "src": [
+                "images/common/postload/baseGame/other/**/*.json",
+                "images/common/postload/baseGame/other/**/*.png",
+                "images/common/postload/baseGame/other/**/*.png",
+                "images/common/postload/baseGame/lang/en/**/*.json",
+                "images/common/postload/baseGame/lang/en/**/*.png",
+                "images/common/postload/baseGame/lang/en/**/*.png",
+                "images/<%= hdRes %>/postload/baseGame/other/**/*.json",
+                "images/<%= hdRes %>/postload/baseGame/other/**/*.png",
+                "images/<%= hdRes %>/postload/baseGame/other/**/*.png",
+                "images/<%= hdRes %>/postload/baseGame/lang/en/**/*.json",
+                "images/<%= hdRes %>/postload/baseGame/lang/en/**/*.png",
+                "images/<%= hdRes %>/postload/baseGame/lang/en/**/*.png"
+            ],
+            "cwd": "<%= assetsDir %>"
+        },
+        {
+            "dest": "<%= assetsDir %>manifest/list_free<%= hdRes %>_en.json",
+            "src": [
+                "images/<%= hdRes %>/postload/freegame/other/**/*.json",
+                "images/<%= hdRes %>/postload/freegame/other/**/*.png",
+                "images/<%= hdRes %>/postload/freegame/other/**/*.png",
+                "images/<%= hdRes %>/postload/freegame/lang/en/**/*.json",
+                "images/<%= hdRes %>/postload/freegame/lang/en/**/*.png",
+                "images/<%= hdRes %>/postload/freegame/lang/en/**/*.png"
+            ],
+            "cwd": "<%= assetsDir %>"
+        },
+        {
+            "dest": "<%= assetsDir %>manifest/list_info<%= hdRes %>_en.json",
+            "src": [
+                "images/<%= hdRes %>/postload/paytable/other/**/*.json",
+                "images/<%= hdRes %>/postload/paytable/other/**/*.png",
+                "images/<%= hdRes %>/postload/paytable/other/**/*.png",
+                "images/<%= hdRes %>/postload/paytable/lang/en/**/*.json",
+                "images/<%= hdRes %>/postload/paytable/lang/en/**/*.png",
+                "images/<%= hdRes %>/postload/paytable/lang/en/**/*.png"
+            ],
+            "cwd": "<%= assetsDir %>"
+        }
+    ]
+}

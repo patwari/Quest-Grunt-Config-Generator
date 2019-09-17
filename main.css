@@ -11,5 +11,15 @@ hr {
     margin-right: auto;
     border-style: inset;
     border-width: 1px;
-} 
-  
+}
+
+fieldset{
+    display: inline-block;
+}
+
+.bigHR{
+    border: none;
+    height: 10px;
+    color: brown;
+    background-color: chocolate;
+}
