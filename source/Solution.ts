@@ -25,7 +25,11 @@ namespace monoloco.core {
 
         private onListManifestClicked(): void {
             this.clearOutput();
-            // to generate list Manifest
+            this.getUserLang();
+            this.getUserResolution();
+            this.getUserFileTypes();
+            this.getUserLoadTypes();
+            this.generateListManifestConfig();
         }
 
         /**
@@ -125,16 +129,15 @@ namespace monoloco.core {
                 // TODO:  handle later when no language given
                 Constants.RESOLUTIONS.forEach((res: string, resIndex: number) => {
                     Constants.LOAD_TYPE_ARRAY.forEach((loadType: LOADTYPE) => {
-                        htmlText += this.addLoadingType(undefined, res, loadType);
+                        htmlText += this.getFileIndex(undefined, res, loadType);
                     });
                 });
-
             }
 
             Constants.LANG.forEach((lang: string, langIndex: number) => {
                 Constants.RESOLUTIONS.forEach((res: string, resIndex: number) => {
                     Constants.LOAD_TYPE_ARRAY.forEach((loadType: LOADTYPE) => {
-                        htmlText += this.addLoadingType(lang, res, loadType);
+                        htmlText += this.getFileIndex(lang, res, loadType);
                     });
                 });
             });
@@ -152,7 +155,7 @@ namespace monoloco.core {
          * @param loadType 
          * @returns {string} the final object string 
          */
-        private addLoadingType(lang: string | undefined, res: string, loadType: LOADTYPE): string {
+        private getFileIndex(lang: string | undefined, res: string, loadType: LOADTYPE): string {
             let tempText: string = "";
             let finalString: string = "";
             finalString += "{<br>";
@@ -259,6 +262,65 @@ namespace monoloco.core {
             if (skipComma) {
                 tempText = tempText.replace(/,<br>$/, "<br>");
             }
+            return tempText;
+        }
+
+        private generateListManifestConfig(): void {
+            let htmlText: string = "";
+
+            if (!Constants.LANG.length) {
+                Constants.RESOLUTIONS.forEach((res: string, resIndex: number) => {
+                    Constants.LOAD_TYPE_ARRAY.forEach((loadType: LOADTYPE) => {
+                        htmlText += this.getListManifest(undefined, res, loadType);
+                    });
+                });
+            }
+
+            Constants.LANG.forEach((lang: string, langIndex: number) => {
+                Constants.RESOLUTIONS.forEach((res: string, resIndex: number) => {
+                    Constants.LOAD_TYPE_ARRAY.forEach((loadType: LOADTYPE) => {
+                        htmlText += this.getListManifest(lang, res, loadType);
+                    });
+                });
+            });
+            // remove the last comma "," (if any)
+            htmlText = htmlText.replace(/,<br>$/, "<br>");
+            htmlText = '"files": [<br>' + htmlText + ']';
+            outputDiv.innerHTML = htmlText;
+        }
+
+        private getListManifest(lang: string | undefined, res: string, loadType: LOADTYPE): string {
+            let tempText: string = "";
+            tempText += "{<br>";
+
+            let currLoadType: string = "";
+            switch (loadType) {
+                case LOADTYPE.list_base:
+                    currLoadType = "list_base";
+                    break;
+                case LOADTYPE.list_base_postload:
+                    currLoadType = "list_base_postload";
+                    break;
+                case LOADTYPE.list_free:
+                    currLoadType = "list_free";
+                    break;
+                case LOADTYPE.list_info:
+                    currLoadType = "list_info";
+                    break;
+                default:
+                    break;
+            };
+            currLoadType += "_";
+            if (lang === undefined || lang === null) {
+                tempText += '"dest": "' + Constants.ASSET_DEST_DIR + 'manifest/' + currLoadType + res + '.json",<br>';
+                tempText += '"src": "' + Constants.ASSET_DIR + 'manifest/' + currLoadType + res + '.json"<br>';
+            }
+            else {
+                tempText += '"dest": "' + Constants.ASSET_DEST_DIR + 'manifest/' + currLoadType + res + '_' + lang + '.json",<br>';
+                tempText += '"src": "' + Constants.ASSET_DIR + 'manifest/' + currLoadType + res + '_' + lang + '.json"<br>';
+            }
+
+            tempText += "},<br>";
             return tempText;
         }
     }

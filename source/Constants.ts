@@ -18,5 +18,7 @@ namespace monoloco.core {
         // public static readonly LOAD_MODE: Array<string> = ["preload", "postload"];
         public static FILE_TYPE_SUFFIX: Array<string> = ["**/*.json", "**/*.png", "**/*.jpg"];
         public static LOAD_TYPE_ARRAY: Array<LOADTYPE> = [LOADTYPE.list_base, LOADTYPE.list_base_postload, LOADTYPE.list_free, LOADTYPE.list_info];
+        public static ASSET_DIR: string = "<%= assetsDir %>";
+        public static ASSET_DEST_DIR: string = "<%= assetDestDir %>";
     }
 }

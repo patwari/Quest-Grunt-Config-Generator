@@ -1,0 +1,36 @@
+{
+    "files": [
+        {
+            "dest": "<%= assetDestDir %>manifest/list_base_<%= dtRes %>_en.json",
+            "src": "<%= assetsDir %>manifest/list_base_<%= dtRes %>_en.json"
+        },
+        {
+            "dest": "<%= assetDestDir %>manifest/list_base_postload_<%= dtRes %>_en.json",
+            "src": "<%= assetsDir %>manifest/list_base_postload_<%= dtRes %>_en.json"
+        },
+        {
+            "dest": "<%= assetDestDir %>manifest/list_free_<%= dtRes %>_en.json",
+            "src": "<%= assetsDir %>manifest/list_free_<%= dtRes %>_en.json"
+        },
+        {
+            "dest": "<%= assetDestDir %>manifest/list_info_<%= dtRes %>_en.json",
+            "src": "<%= assetsDir %>manifest/list_info_<%= dtRes %>_en.json"
+        },
+        {
+            "dest": "<%= assetDestDir %>manifest/list_base_<%= dtRes %>_tr.json",
+            "src": "<%= assetsDir %>manifest/list_base_<%= dtRes %>_tr.json"
+        },
+        {
+            "dest": "<%= assetDestDir %>manifest/list_base_postload_<%= dtRes %>_tr.json",
+            "src": "<%= assetsDir %>manifest/list_base_postload_<%= dtRes %>_tr.json"
+        },
+        {
+            "dest": "<%= assetDestDir %>manifest/list_free_<%= dtRes %>_tr.json",
+            "src": "<%= assetsDir %>manifest/list_free_<%= dtRes %>_tr.json"
+        },
+        {
+            "dest": "<%= assetDestDir %>manifest/list_info_<%= dtRes %>_tr.json",
+            "src": "<%= assetsDir %>manifest/list_info_<%= dtRes %>_tr.json"
+        }
+    ]
+}
