@@ -141,7 +141,7 @@ namespace monoloco.core {
 
             // remove the last comma "," (if any)
             htmlText = htmlText.replace(/,<br>$/, "<br>");
-            htmlText = '"files": [' + htmlText + ']';
+            htmlText = '"files": [<br>' + htmlText + ']';
             outputDiv.innerHTML = htmlText;
         }
 
