@@ -1,3 +1,7 @@
+/**
+ * This file contains the help controls.
+ */
+
 namespace monoloco.core {
     export class HelpFile {
         private helpButton: HTMLInputElement = document.getElementById("helpButton") as HTMLInputElement;
