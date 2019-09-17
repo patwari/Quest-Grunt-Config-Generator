@@ -1,0 +1,22 @@
+{
+  "name": "gruntconfiggenerator",
+  "version": "0.1.0-rc",
+  "description": "This is a grunt config generator for Quest.\r ## Project Setup\r 1. Clone repository at local directory. Go to the root directory\r 2. Open cmd and run ```http-server```.\r 3. Open the provided local server link in browser.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patwari/Quest-Grunt-Config-Generator.git"
+  },
+  "keywords": [
+    "Quest",
+    "js",
+    "gruntconfig",
+    "grunt"
+  ],
+  "author": "monoloco",
+  "license": "ISC",
+  "homepage": "https://github.com/patwari/Quest-Grunt-Config-Generator#readme"
+}

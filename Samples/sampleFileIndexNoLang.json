@@ -1,0 +1,88 @@
+{
+    "files": [
+        {
+            "dest": "<%= assetsDir %>manifest/list_base_<%= dtRes %>.json",
+            "src": [
+                "images/common/preload/**/*.json",
+                "images/common/preload/**/*.png",
+                "images/common/preload/**/*.jpg",
+                "images/<%= dtRes %>/preload/**/*.json",
+                "images/<%= dtRes %>/preload/**/*.png",
+                "images/<%= dtRes %>/preload/**/*.jpg"
+            ],
+            "cwd": "<%= assetsDir %>"
+        },
+        {
+            "dest": "<%= assetsDir %>manifest/list_base_postload_<%= dtRes %>_undefined.json",
+            "src": [
+                "images/common/postload/baseGame/**/*.json",
+                "images/common/postload/baseGame/**/*.png",
+                "images/common/postload/baseGame/**/*.jpg",
+                "images/<%= dtRes %>/postload/baseGame/**/*.json",
+                "images/<%= dtRes %>/postload/baseGame/**/*.png",
+                "images/<%= dtRes %>/postload/baseGame/**/*.jpg"
+            ],
+            "cwd": "<%= assetsDir %>"
+        },
+        {
+            "dest": "<%= assetsDir %>manifest/list_free_<%= dtRes %>_undefined.json",
+            "src": [
+                "images/<%= dtRes %>/postload/freegame/**/*.json",
+                "images/<%= dtRes %>/postload/freegame/**/*.png",
+                "images/<%= dtRes %>/postload/freegame/**/*.jpg"
+            ],
+            "cwd": "<%= assetsDir %>"
+        },
+        {
+            "dest": "<%= assetsDir %>manifest/list_info_<%= dtRes %>_undefined.json",
+            "src": [
+                "images/<%= dtRes %>/postload/paytable/**/*.json",
+                "images/<%= dtRes %>/postload/paytable/**/*.png",
+                "images/<%= dtRes %>/postload/paytable/**/*.jpg"
+            ],
+            "cwd": "<%= assetsDir %>"
+        },
+        {
+            "dest": "<%= assetsDir %>manifest/list_base_<%= hdRes %>.json",
+            "src": [
+                "images/common/preload/**/*.json",
+                "images/common/preload/**/*.png",
+                "images/common/preload/**/*.jpg",
+                "images/<%= hdRes %>/preload/**/*.json",
+                "images/<%= hdRes %>/preload/**/*.png",
+                "images/<%= hdRes %>/preload/**/*.jpg"
+            ],
+            "cwd": "<%= assetsDir %>"
+        },
+        {
+            "dest": "<%= assetsDir %>manifest/list_base_postload_<%= hdRes %>_undefined.json",
+            "src": [
+                "images/common/postload/baseGame/**/*.json",
+                "images/common/postload/baseGame/**/*.png",
+                "images/common/postload/baseGame/**/*.jpg",
+                "images/<%= hdRes %>/postload/baseGame/**/*.json",
+                "images/<%= hdRes %>/postload/baseGame/**/*.png",
+                "images/<%= hdRes %>/postload/baseGame/**/*.jpg"
+            ],
+            "cwd": "<%= assetsDir %>"
+        },
+        {
+            "dest": "<%= assetsDir %>manifest/list_free_<%= hdRes %>_undefined.json",
+            "src": [
+                "images/<%= hdRes %>/postload/freegame/**/*.json",
+                "images/<%= hdRes %>/postload/freegame/**/*.png",
+                "images/<%= hdRes %>/postload/freegame/**/*.jpg"
+            ],
+            "cwd": "<%= assetsDir %>"
+        },
+        {
+            "dest": "<%= assetsDir %>manifest/list_info_<%= hdRes %>_undefined.json",
+            "src": [
+                "images/<%= hdRes %>/postload/paytable/**/*.json",
+                "images/<%= hdRes %>/postload/paytable/**/*.png",
+                "images/<%= hdRes %>/postload/paytable/**/*.jpg"
+            ],
+            "cwd": "<%= assetsDir %>"
+        }
+    ]
+}

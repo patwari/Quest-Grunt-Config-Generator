@@ -1,0 +1,68 @@
+{
+    "files": [
+        {
+            "dest": "<%= assetDestDir %>manifest/list_base_<%= dtRes %>_en.json",
+            "src": "<%= assetsDir %>manifest/list_base_<%= dtRes %>_en.json"
+        },
+        {
+            "dest": "<%= assetDestDir %>manifest/list_base_postload_<%= dtRes %>_en.json",
+            "src": "<%= assetsDir %>manifest/list_base_postload_<%= dtRes %>_en.json"
+        },
+        {
+            "dest": "<%= assetDestDir %>manifest/list_free_<%= dtRes %>_en.json",
+            "src": "<%= assetsDir %>manifest/list_free_<%= dtRes %>_en.json"
+        },
+        {
+            "dest": "<%= assetDestDir %>manifest/list_info_<%= dtRes %>_en.json",
+            "src": "<%= assetsDir %>manifest/list_info_<%= dtRes %>_en.json"
+        },
+        {
+            "dest": "<%= assetDestDir %>manifest/list_base_<%= hdRes %>_en.json",
+            "src": "<%= assetsDir %>manifest/list_base_<%= hdRes %>_en.json"
+        },
+        {
+            "dest": "<%= assetDestDir %>manifest/list_base_postload_<%= hdRes %>_en.json",
+            "src": "<%= assetsDir %>manifest/list_base_postload_<%= hdRes %>_en.json"
+        },
+        {
+            "dest": "<%= assetDestDir %>manifest/list_free_<%= hdRes %>_en.json",
+            "src": "<%= assetsDir %>manifest/list_free_<%= hdRes %>_en.json"
+        },
+        {
+            "dest": "<%= assetDestDir %>manifest/list_info_<%= hdRes %>_en.json",
+            "src": "<%= assetsDir %>manifest/list_info_<%= hdRes %>_en.json"
+        },
+        {
+            "dest": "<%= assetDestDir %>manifest/list_base_<%= sdRes %>_en.json",
+            "src": "<%= assetsDir %>manifest/list_base_<%= sdRes %>_en.json"
+        },
+        {
+            "dest": "<%= assetDestDir %>manifest/list_base_postload_<%= sdRes %>_en.json",
+            "src": "<%= assetsDir %>manifest/list_base_postload_<%= sdRes %>_en.json"
+        },
+        {
+            "dest": "<%= assetDestDir %>manifest/list_free_<%= sdRes %>_en.json",
+            "src": "<%= assetsDir %>manifest/list_free_<%= sdRes %>_en.json"
+        },
+        {
+            "dest": "<%= assetDestDir %>manifest/list_info_<%= sdRes %>_en.json",
+            "src": "<%= assetsDir %>manifest/list_info_<%= sdRes %>_en.json"
+        },
+        {
+            "dest": "<%= assetDestDir %>manifest/list_base_<%= ldRes %>_en.json",
+            "src": "<%= assetsDir %>manifest/list_base_<%= ldRes %>_en.json"
+        },
+        {
+            "dest": "<%= assetDestDir %>manifest/list_base_postload_<%= ldRes %>_en.json",
+            "src": "<%= assetsDir %>manifest/list_base_postload_<%= ldRes %>_en.json"
+        },
+        {
+            "dest": "<%= assetDestDir %>manifest/list_free_<%= ldRes %>_en.json",
+            "src": "<%= assetsDir %>manifest/list_free_<%= ldRes %>_en.json"
+        },
+        {
+            "dest": "<%= assetDestDir %>manifest/list_info_<%= ldRes %>_en.json",
+            "src": "<%= assetsDir %>manifest/list_info_<%= ldRes %>_en.json"
+        }
+    ]
+}
